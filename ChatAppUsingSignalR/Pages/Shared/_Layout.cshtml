@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ChatAppUsingSignalR</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ChatAppUsingSignalR.styles.css" asp-append-version="true" />
+    <link href="css/Style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            Chat Application
+        </div>
+        <div class="message-section" id="messageSection">
+        </div>
+        <div class="input-section">
+            <input type="text" class="input" id="txtMessage" placeholder="Enter Your Message" />
+            <button class="btn" id="btnSend">Send</button>
+            <input type="file" id="fileInput" accept="image/*, .pdf, .doc, .txt" />
+            <button class="btn" id="btnSendFile">Send</button>
+        </div>
+    </div>
+    <script src="lib/microsoft/signalr/dist/browser/signalr.js"></script>
+    <script src="js/chat.js"></script>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
